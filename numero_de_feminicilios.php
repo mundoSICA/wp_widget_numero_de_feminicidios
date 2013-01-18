@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Número de feminicilios
-Plugin URI: http://mundosica.com/blog/category/wp-plugins/
+Plugin URI: https://github.com/mundoSICA/wp_widget_numero_de_feminicilios
 Description: Este plugin que nos ayuda a llevar el conteo del número de feminicilios. Plugin desarrollada por <a href="http://mundosica.com">mundoSICÁ.com</a>
 Version: 1.0.1
 Author: fitorec
@@ -14,23 +14,23 @@ Author URI: http://www.mundosica.com/blog/author/fitorec/
  */
 class numero_de_feminicilios_widget extends WP_Widget {
 
-	/**
-	 * Constructor
-	 * Se encarga de crear la instancia
-	 */
+/**
+ * Constructor
+ * Se encarga de crear la instancia
+ */
 	function numero_de_feminicilios_widget() {
 		parent::WP_Widget(false, $name = 'Número de feminicilios');
 	}
 
-	/**
-	 * Muestra la salida del widget en la página
-	 *
-	 * @param array $args los argumentos
-	 * @param array $instance los valores que obtenemos del panel administrativo
-	 * @return void
-	 * @access public
-	 * @link WP_Widget::widget
-	 */
+/**
+ * Muestra la salida del widget en la página
+ *
+ * @param array $args los argumentos
+ * @param array $instance los valores que obtenemos del panel administrativo
+ * @return void
+ * @access public
+ * @link WP_Widget::widget
+ */
 	function widget($args, $instance) {
 			?>
 			<div id="numero_de_feminicilios">
@@ -41,14 +41,14 @@ class numero_de_feminicilios_widget extends WP_Widget {
 			<?php
    	 }//end function widget
 
-	/**
-	 * Se encarga de generar el formulario para la parte administrativa.
-	 *
-	 * @param array $instance valores de la instancia
-	 * @return void
-	 * @access public
-	 * @link WP_Widget::form
-	 */
+/**
+ * Se encarga de generar el formulario para la parte administrativa.
+ *
+ * @param array $instance valores de la instancia
+ * @return void
+ * @access public
+ * @link WP_Widget::form
+ */
 	function form($instance) {
 		$instance = wp_parse_args (
 			(array) $instance,
@@ -73,15 +73,15 @@ class numero_de_feminicilios_widget extends WP_Widget {
 	<?php
 	}//end form function
 
-	/**
-	 * Se encarga de actualizar los datos que recibimos del formulario de la parte administrativa.
-	 *
-	 * @param array $new_instance la nueva instancia donde numero_de_feminicilios tiene que ser un número
-	 * @param array $old_instance la anterior instancia(los datos anteriores)
-	 * @return array regresa la instancia cambiada(en caso que no suceda ningun errror)
-	 * @access public
-	 * @link WP_Widget::update
-	 */
+/**
+ * Se encarga de actualizar los datos que recibimos del formulario de la parte administrativa.
+ *
+ * @param array $new_instance la nueva instancia donde numero_de_feminicilios tiene que ser un número
+ * @param array $old_instance la anterior instancia(los datos anteriores)
+ * @return array regresa la instancia cambiada(en caso que no suceda ningun errror)
+ * @access public
+ * @link WP_Widget::update
+ */
 	function update($new_instance, $old_instance) {
 			$instance = $old_instance;
 			$instance['titulo'] = strip_tags($new_instance['titulo']);
