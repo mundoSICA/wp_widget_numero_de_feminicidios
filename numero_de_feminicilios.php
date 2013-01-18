@@ -14,10 +14,10 @@ Author URI: http://www.mundosica.com/blog/author/fitorec/
  */
 class numero_de_feminicilios_widget extends WP_Widget {
 
-	/*
-	* Constructor
-	* Se encarga de crear la instancia
-	*/
+	/**
+	 * Constructor
+	 * Se encarga de crear la instancia
+	 */
 	function numero_de_feminicilios_widget() {
 		parent::WP_Widget(false, $name = 'Número de feminicilios');
 	}
