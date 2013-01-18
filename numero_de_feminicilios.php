@@ -12,15 +12,22 @@ Author URI: http://www.mundosica.com/blog/author/fitorec/
 /**
  * Número de feminicilios Widget Class
  */
-class numero_de_feminicilios_widget extends WP_Widget {
+class Numero_de_feminicilios_widget extends WP_Widget {
 
 /**
- * Constructor
- * Se encarga de crear la instancia
+ * Constructor - Se encarga de crear la instancia
+ *
+ * @return void
+ * @access public
+ * @link http://codex.wordpress.org/Widgets_API
  */
-	function numero_de_feminicilios_widget() {
-		parent::WP_Widget(false, $name = 'Número de feminicilios');
-	}
+	public function __construct() {
+		parent::__construct(
+	 		'Numero_de_feminicilios_widget', // Base ID
+			'Número de feminicilios', // Nombre
+			array( 'description' => 'Este plugin que nos ayuda a llevar el conteo del número de feminicilios. Plugin desarrollada por http://mundosica.com', ) // Args
+		);
+	}//end __construct function
 
 /**
  * Muestra la salida del widget en la página
@@ -89,7 +96,10 @@ class numero_de_feminicilios_widget extends WP_Widget {
 			return $instance;
 	}//end function update
 
-} // end class numero_de_feminicilios_widget
+} // end class Numero_de_feminicilios_widget
 
 // registro de Número de feminicilios Widget
-add_action('widgets_init', create_function('', 'return register_widget("numero_de_feminicilios_widget");'));
+add_action(
+	'widgets_init',
+	create_function('', 'return register_widget("Numero_de_feminicilios_widget");')
+);
